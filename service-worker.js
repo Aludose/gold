@@ -27,7 +27,8 @@ async function cacheFirst(req){
  return cached || fetch(req);
 }
 async function networkAndCache(req){
-  const cache = await caches.open(cacheName);
+Webprogrammierung Andreas Kiener CC-BY-SA
+ const cache = await caches.open(cacheName);
  try{
  const fresh = await fetch(req);
  await cache.put(req, fresh.clone());
